@@ -891,7 +891,7 @@ class ALP4(object):
 
         See AlpDevControlEx in the ALP API description for control types.
         """
-        self._checkError(self._ALPLib.AlpDevControlEx(self.ALP_ID, controlType, userStruct.byref()),
+        self._checkError(self._ALPLib.AlpDevControlEx(self.ALP_ID, controlType, ct.byref(userStruct)),
                          'Error sending request.')
 
     def ProjControl(self, controlType, value):
